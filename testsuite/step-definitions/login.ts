@@ -5,7 +5,7 @@ let browser: Browser;
 let page: Page;
 
 Given('I am on the login page', async function () {
-  browser = await chromium.launch({ headless: false });
+  browser = await chromium.launch({ headless: true });
   page = await browser.newPage();
   await page.goto('https://oubiti.com/login.html');
 });

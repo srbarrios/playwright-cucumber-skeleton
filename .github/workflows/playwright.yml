@@ -13,12 +13,11 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright
-      run: npx playwright install --with-deps
+      run: npx playwright install chromium
     - name: Run tests
       run: npm run cucumber
-    - name: Upload Cucumber JSON Reports
+    - name: Upload Cucumber Reports
       uses: actions/upload-artifact@v4.6.1
       with:
-        path: ./reports/cucumber-report.html
+        path: ./reports/*.*
         if-no-files-found: warn
-        compression-level: 6
